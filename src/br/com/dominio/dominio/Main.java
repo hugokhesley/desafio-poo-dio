@@ -24,9 +24,33 @@ public class Main {
         mentoria.setDescricao("Descrição da mentoria JAVA");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
 
+
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição do Curso Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devHugo = new Dev();
+        devHugo.setNome("Hugo");
+        devHugo.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos: " + devHugo.getConteudosInscritos());
+        devHugo.progredir();
+        System.out.println("---");
+        System.out.println("Conteúdos inscritos: " + devHugo.getConteudosInscritos());
+        System.out.println("Conteúdos inscritos: " + devHugo.getConteudosConcluidos());
+
+
+        Dev devDavi = new Dev();
+        devDavi.setNome("Davi");
+        devDavi.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos: " + devDavi.getConteudosInscritos());
+        devDavi.progredir();
+        System.out.println("---");
+        System.out.println("Conteúdos inscritos: " + devDavi.getConteudosConcluidos());
+        System.out.println("Conteúdos inscritos: " + devDavi.getConteudosConcluidos());
     }
 }
